@@ -1,0 +1,1 @@
+# React + Vite + Tailwind (Abaoitoire Pro DZ)\n\nScripts:\n```bash\nnpm install\nnpm run dev\nnpm run build\n```\n\nCloudflare Pages:\n- Build command: `npm run build`\n- Output directory: `dist`\n- Add `public/_redirects` with: `/*    /index.html   200`\n

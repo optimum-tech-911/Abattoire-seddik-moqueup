@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root{ 
+  --butcher-primary: #990F02;
+  --butcher-dark: #5C0000;
+  --butcher-gold: #C0A060;
+  --butcher-cream: #F2EDE4;
+  --butcher-btn-bg: #7B0A01;
+  --butcher-btn-hover: #B61606;
+  --butcher-text: #0F0F0F;
+  --butcher-text-secondary: #2C2C2C;
+}
