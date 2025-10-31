@@ -1,5 +1,13 @@
 import React from 'react'
 import { I18N, getLang } from '../i18n'
+import engagement1 from '../assets/Notre engagement 1.png'
+import engagement2 from '../assets/Notre engagement 2.png'
+import engagement3 from '../assets/Notre engagement 3.png'
+import engagement4 from '../assets/Notre engagement 4.png'
+import engagement5 from '../assets/Notre engagement 5.png'
+import equipe1 from '../assets/Notre équipe 1.png'
+import equipe2 from '../assets/Notre équipe 2.png'
+import equipe3 from '../assets/Notre équipe 3.png'
 
 export default function Services(){ 
   const t = I18N[getLang()]
@@ -8,39 +16,39 @@ export default function Services(){
     {
       title: t.svc1t,
       text: t.svc1d,
-      img: '/src/assets/Notre engagement 1.png'
+      img: engagement1
     },
     {
       title: t.svc2t,
       text: t.svc2d,
-      img: '/src/assets/Notre engagement 2.png'
+      img: engagement2
     },
     {
       title: t.svc3t,
       text: t.svc3d,
-      img: '/src/assets/Notre engagement 3.png'
+      img: engagement3
     },
     {
       title: t.svc4t,
       text: t.svc4d,
-      img: '/src/assets/Notre engagement 4.png'
+      img: engagement4
     },
     {
       title: t.svc5t,
       text: t.svc5d,
-      img: '/src/assets/Notre engagement 5.png'
+      img: engagement5
     }
   ]
   
   const gallery = [
-    '/src/assets/Notre engagement 1.png',
-    '/src/assets/Notre engagement 2.png',
-    '/src/assets/Notre engagement 3.png',
-    '/src/assets/Notre engagement 4.png',
-    '/src/assets/Notre engagement 5.png',
-    '/src/assets/Notre équipe 1.png',
-    '/src/assets/Notre équipe 2.png',
-    '/src/assets/Notre équipe 3.png'
+    engagement1,
+    engagement2,
+    engagement3,
+    engagement4,
+    engagement5,
+    equipe1,
+    equipe2,
+    equipe3
   ]
   
   return (

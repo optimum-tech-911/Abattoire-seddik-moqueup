@@ -1,5 +1,6 @@
 import React from 'react'
 import { I18N, getLang } from '../i18n'
+import landingPageImg from '../assets/landing page.png'
 
 export default function Home(){ 
   const t = I18N[getLang()]
@@ -26,7 +27,7 @@ export default function Home(){
           <div className='relative'>
             <div className='aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-[#C0A060]/60'>
               <img 
-                src='/src/assets/landing page.png' 
+                src={landingPageImg} 
                 alt='abattoir pro' 
                 className='w-full h-full object-cover'
               />

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { I18N, getLang, setLang } from '../i18n'
+import logo from '../assets/Logo.png'
 
 export default function Header(){
   const [lang, setLangState] = useState(getLang())
@@ -61,7 +62,7 @@ export default function Header(){
         
         {/* Center Section - Logo & Brand */}
         <NavLink to="/" className="flex items-center gap-2 sm:gap-3 flex-1 sm:flex-initial justify-center sm:justify-start cursor-pointer hover:opacity-90 transition-opacity">
-          <img src="/src/assets/Logo.png" alt="logo" className="h-9 w-9 sm:h-10 sm:w-10 rounded-full ring-2 ring-[#C0A060] flex-shrink-0 shadow-lg object-cover"/>
+          <img src={logo} alt="logo" className="h-9 w-9 sm:h-10 sm:w-10 rounded-full ring-2 ring-[#C0A060] flex-shrink-0 shadow-lg object-cover"/>
           <div className="text-white drop-shadow-lg">
             <div className="text-base sm:text-xl md:text-2xl font-extrabold leading-tight" style={{textShadow:'2px 2px 4px rgba(0,0,0,0.5)'}}>{t.brand}</div>
             <div className="text-xs opacity-95 hidden sm:block" style={{textShadow:'1px 1px 2px rgba(0,0,0,0.5)'}}>{t.subtitle}</div>

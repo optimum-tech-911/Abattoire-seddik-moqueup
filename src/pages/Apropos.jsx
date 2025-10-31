@@ -1,5 +1,14 @@
 import React from 'react'
 import { I18N, getLang } from '../i18n'
+import aboutUsImg from '../assets/about us.png'
+import equipe1 from '../assets/Notre équipe 1.png'
+import equipe2 from '../assets/Notre équipe 2.png'
+import equipe3 from '../assets/Notre équipe 3.png'
+import engagement1 from '../assets/Notre engagement 1.png'
+import engagement2 from '../assets/Notre engagement 2.png'
+import engagement3 from '../assets/Notre engagement 3.png'
+import engagement4 from '../assets/Notre engagement 4.png'
+import engagement5 from '../assets/Notre engagement 5.png'
 
 export default function Apropos(){ 
   const t = I18N[getLang()]
@@ -8,27 +17,27 @@ export default function Apropos(){
     {
       title: t.engagement1t,
       desc: t.engagement1d,
-      img: '/src/assets/Notre engagement 1.png'
+      img: engagement1
     },
     {
       title: t.engagement2t,
       desc: t.engagement2d,
-      img: '/src/assets/Notre engagement 2.png'
+      img: engagement2
     },
     {
       title: t.engagement3t,
       desc: t.engagement3d,
-      img: '/src/assets/Notre engagement 3.png'
+      img: engagement3
     },
     {
       title: t.engagement4t,
       desc: t.engagement4d,
-      img: '/src/assets/Notre engagement 4.png'
+      img: engagement4
     },
     {
       title: t.engagement5t,
       desc: t.engagement5d,
-      img: '/src/assets/Notre engagement 5.png'
+      img: engagement5
     }
   ]
   
@@ -43,7 +52,7 @@ export default function Apropos(){
       {/* Placeholder image between sections */}
       <div className='rounded-3xl overflow-hidden shadow-2xl ring-4 ring-[#C0A060]/40'>
         <img 
-          src='/src/assets/about us.png' 
+          src={aboutUsImg} 
           alt='Abattoir facilities' 
           className='w-full h-64 sm:h-96 object-cover'
         />
@@ -57,7 +66,7 @@ export default function Apropos(){
         </div>
         <div className='rounded-2xl overflow-hidden shadow-xl ring-4 ring-[#C0A060]/40'>
           <img 
-            src='/src/assets/about us.png' 
+            src={aboutUsImg} 
             alt='bouchers professionnels' 
             className='w-full h-full object-cover'
           />
@@ -71,21 +80,21 @@ export default function Apropos(){
         <div className='mt-6 grid sm:grid-cols-2 md:grid-cols-3 gap-4'>
           <div className='rounded-2xl overflow-hidden shadow-md ring-2 ring-[#C0A060]/40'>
             <img 
-              src='/src/assets/Notre équipe 1.png' 
+              src={equipe1} 
               alt='team' 
               className='w-full h-52 object-cover'
             />
           </div>
           <div className='rounded-2xl overflow-hidden shadow-md ring-2 ring-[#C0A060]/40'>
             <img 
-              src='/src/assets/Notre équipe 2.png' 
+              src={equipe2} 
               alt='team' 
               className='w-full h-52 object-cover'
             />
           </div>
           <div className='rounded-2xl overflow-hidden shadow-md ring-2 ring-[#C0A060]/40'>
             <img 
-              src='/src/assets/Notre équipe 3.png' 
+              src={equipe3} 
               alt='team' 
               className='w-full h-52 object-cover'
             />
