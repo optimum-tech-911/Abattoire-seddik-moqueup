@@ -49,33 +49,45 @@ export default function Header(){
   
   return (<header id="header" className="fixed top-0 left-0 right-0 z-50 header-blur transition-transform duration-300">
     <div className="max-w-6xl mx-auto px-3 sm:px-6">
-      <div className="h-[80px] md:h-[92px] flex items-center justify-between gap-2">
-        {/* Left Section - Contact Button (Desktop only) */}
-        <div className="hidden sm:flex items-center gap-2">
-          <NavLink to="/contact">
-            <button className="btn btn-primary px-3 py-2 rounded-xl font-semibold inline-flex items-center gap-2 shadow-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.11 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.3 1.78.57 2.64a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.44-1.14a2 2 0 0 1 2.11-.45c.86.27 1.74.45 2.64.57A2 2 0 0 1 22 16.92z"/></svg>
-              <span>{t.ctaContact}</span>
-            </button>
+      <div className="h-[80px] md:h-[92px] flex md:grid md:grid-cols-3 items-center gap-2">
+        {/* Left Section (Desktop): Logo + Name */}
+        <div className="hidden md:flex items-center gap-4">
+          <NavLink to="/" className="inline-flex items-center gap-3 cursor-pointer hover:opacity-90 transition-opacity">
+            <img src={logo} alt="logo" className="h-9 w-9 sm:h-11 sm:w-11 md:h-14 md:w-14 rounded-full ring-2 ring-[#C0A060] flex-shrink-0 shadow-lg object-cover"/>
+            <div className="text-white drop-shadow-lg">
+              <div className="text-lg md:text-xl lg:text-2xl font-extrabold leading-none whitespace-nowrap" style={{textShadow:'2px 2px 4px rgba(0,0,0,0.5)'}}>{t.brand}</div>
+            </div>
           </NavLink>
         </div>
         
-        {/* Center Section - Logo & Brand */}
-        <NavLink to="/" className="flex items-center gap-2 sm:gap-3 flex-1 sm:flex-initial justify-center sm:justify-start cursor-pointer hover:opacity-90 transition-opacity">
-          <img src={logo} alt="logo" className="h-9 w-9 sm:h-10 sm:w-10 rounded-full ring-2 ring-[#C0A060] flex-shrink-0 shadow-lg object-cover"/>
+        {/* Center Section - Logo & Brand (Mobile only) */}
+        <NavLink to="/" className="flex md:hidden items-center gap-2 sm:gap-3 flex-1 justify-center cursor-pointer hover:opacity-90 transition-opacity">
+          <img src={logo} alt="logo" className="h-9 w-9 sm:h-11 sm:w-11 md:h-12 md:w-12 rounded-full ring-2 ring-[#C0A060] flex-shrink-0 shadow-lg object-cover"/>
           <div className="text-white drop-shadow-lg">
             <div className="text-base sm:text-xl md:text-2xl font-extrabold leading-tight" style={{textShadow:'2px 2px 4px rgba(0,0,0,0.5)'}}>{t.brand}</div>
             <div className="text-xs opacity-95 hidden sm:block" style={{textShadow:'1px 1px 2px rgba(0,0,0,0.5)'}}>{t.subtitle}</div>
           </div>
         </NavLink>
         
-        {/* Right Section - Navigation & Menu */}
-        <div className="flex items-center gap-2">
+        {/* Center Section - (Desktop placeholder to keep balance) */}
+        <div className="hidden md:block" />
+
+        {/* Right Section (Desktop): Nav buttons + Language | (Mobile): Toggle) */}
+        <div className="flex items-center justify-end gap-2">
+          {/* Desktop nav buttons to the left of language */}
           <nav className="hidden md:flex items-center gap-2">
-            <NavLink to="/apropos" className="px-4 py-2 rounded-xl border-2 border-[#C0A060]/30 backdrop-blur-sm bg-white/15 text-white font-semibold btn hover:bg-[#C0A060]/20 hover:border-[#C0A060]/50" style={{textShadow:'1px 1px 2px rgba(0,0,0,0.5)'}}>{t.nav.apropos}</NavLink>
-            <NavLink to="/services" className="px-4 py-2 rounded-xl border-2 border-[#C0A060]/30 backdrop-blur-sm bg-white/15 text-white font-semibold btn hover:bg-[#C0A060]/20 hover:border-[#C0A060]/50" style={{textShadow:'1px 1px 2px rgba(0,0,0,0.5)'}}>{t.nav.services}</NavLink>
-            <NavLink to="/contact" className="px-4 py-2 rounded-xl border-2 border-[#C0A060]/30 backdrop-blur-sm bg-white/15 text-white font-semibold btn hover:bg-[#C0A060]/20 hover:border-[#C0A060]/50" style={{textShadow:'1px 1px 2px rgba(0,0,0,0.5)'}}>{t.nav.contact}</NavLink>
+            <NavLink to="/apropos" className="px-4 py-2 rounded-xl border-2 border-[#C0A060]/30 backdrop-blur-sm bg-white/15 text-white font-semibold btn inline-flex items-center whitespace-nowrap hover:bg-[#C0A060]/20 hover:border-[#C0A060]/50" style={{textShadow:'1px 1px 2px rgba(0,0,0,0.5)'}}>
+              {t.nav.apropos}
+            </NavLink>
+            <NavLink to="/services" className="px-4 py-2 rounded-xl border-2 border-[#C0A060]/30 backdrop-blur-sm bg-white/15 text-white font-semibold btn inline-flex items-center whitespace-nowrap hover:bg-[#C0A060]/20 hover:border-[#C0A060]/50" style={{textShadow:'1px 1px 2px rgba(0,0,0,0.5)'}}>
+              {t.nav.services}
+            </NavLink>
+            <NavLink to="/contact" className="px-4 py-2 rounded-xl border-2 border-[#C0A060]/30 backdrop-blur-sm bg-white/15 text-white font-semibold btn inline-flex items-center gap-2 whitespace-nowrap hover:bg-[#C0A060]/20 hover:border-[#C0A060]/50" style={{textShadow:'1px 1px 2px rgba(0,0,0,0.5)'}}>
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.11 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.3 1.78.57 2.64a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.44-1.14a2 2 0 0 1 2.11-.45c.86.27 1.74.45 2.64.57A2 2 0 0 1 22 16.92z"/></svg>
+              <span>{t.nav.contact}</span>
+            </NavLink>
           </nav>
+          {/* Desktop language switcher at far right */}
           <div className="relative hidden md:block">
             <button 
               className="btn-primary px-3 py-2 rounded-xl font-semibold inline-flex items-center gap-2 btn shadow-lg"
@@ -86,7 +98,7 @@ export default function Header(){
             </button>
             {langMenuOpen && (
               <div className="absolute right-0 mt-2 w-40 bg-[#F2EDE4] rounded-xl shadow-2xl p-2 grid gap-1 z-50 border-2 border-[#C0A060]/30">
-                {['fr','en','ar'].map(l=>(
+                {['fr','en','ar'].map(l=>((
                   <button 
                     key={l} 
                     className="w-full text-left px-3 py-2 rounded-lg hover:bg-[#C0A060]/20 transition-colors font-semibold text-[#2C2C2C]" 
@@ -94,7 +106,7 @@ export default function Header(){
                   >
                     {l.toUpperCase()}
                   </button>
-                ))}
+                )))}
               </div>
             )}
           </div>
